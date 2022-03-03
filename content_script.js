@@ -6,6 +6,16 @@ btnOpenDialog.type = 'button';
 btnOpenDialog.classList.add('btn', 'btn-light');
 btnOpenDialog.innerText = 'Resposta rápida';
 
+const btnCloseDialog = document.createElement('button');
+btnCloseDialog.type = 'button';
+btnCloseDialog.classList.add('btn', 'btn-light');
+btnCloseDialog.innerText = 'Fechar';
+btnCloseDialog.addEventListener('click', () => {
+  dialog.close();
+});
+
+dialog.insertAdjacentElement('afterbegin', btnCloseDialog);
+
 btnOpenDialog.addEventListener('click', () => {
   dialog.showModal();
 })
@@ -19,7 +29,7 @@ textareaObservacao.insertAdjacentElement('afterend', dialog);
 const respostasRapidas = [
   {
     sistema: 'Égide',
-    texto: 'Solicitação atendida. Cadastro efetuado no sistema Égide. A senha é a mesma fornecida pelo setor de redes. Qualquer problema, à disposição.'
+    texto: localStorage.getItem('@helpdesk.egide') || 'Solicitação atendida. Cadastro efetuado no sistema Égide. A senha é a mesma fornecida pelo setor de redes. Qualquer problema, à disposição.'
   }
 ];
 
