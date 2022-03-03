@@ -1,41 +1,76 @@
-const badges = document.querySelectorAll("a[href^='/chamados/feed'] span.badge");
-const textObservacao = document.querySelector("#id_observacao");
+const dialog = document.createElement('dialog');
+dialog.style = "max-width: 1000px";
 
-const inputEl = document.createElement('input');
-inputEl.classList.add('form-control', 'form-control-sm');
-inputEl.setAttribute('list', 'observacoes_opcoes');
+const btnOpenDialog = document.createElement('button');
+btnOpenDialog.type = 'button';
+btnOpenDialog.classList.add('btn', 'btn-light');
+btnOpenDialog.innerText = 'Resposta rápida';
 
-const respostaPrincipal = localStorage.getItem('@helpdesk.egide');
-
-if (respostaPrincipal != null && respostaPrincipal !== '') {
-  console.log(respostaPrincipal);
-}
-
-const optionsText = [
-  'Selecione uma opção',
-  respostaPrincipal || 'Solicitação atendida. Cadastro efetuado no sistema Égide. A senha é a mesma fornecida pelo setor de redes. Qualquer problema, à disposição.'
-];
-
-const datalist = document.createElement('datalist');
-datalist.setAttribute('id', 'observacoes_opcoes');
-
-optionsText.forEach(optionText => {
-  const optionEl = document.createElement('option');
-  optionEl.value = optionText;
-  datalist.appendChild(optionEl);
+btnOpenDialog.addEventListener('click', () => {
+  dialog.showModal();
 })
 
-if (badges.length) {
-  const badgesArray = Array.from(badges);
+const textareaObservacao = document.querySelector("#id_observacao");
+textareaObservacao.classList.add('mb-2');
 
-  if (badgesArray.some(el => el.textContent.match(/Égide/i) != null)) {
-    textObservacao.classList.add('mb-1')
+textareaObservacao.insertAdjacentElement('afterend', btnOpenDialog);
+textareaObservacao.insertAdjacentElement('afterend', dialog);
 
-    textObservacao.insertAdjacentElement('afterend', inputEl);
-    inputEl.insertAdjacentElement('afterend', datalist);
-
-    inputEl.addEventListener('change', () => {
-      textObservacao.value = inputEl.value;
-    })
+const respostasRapidas = [
+  {
+    sistema: 'Égide',
+    texto: 'Solicitação atendida. Cadastro efetuado no sistema Égide. A senha é a mesma fornecida pelo setor de redes. Qualquer problema, à disposição.'
   }
-}
+];
+
+const tableHeads = ['Sistema', 'Resposta', ''];
+
+const table = document.createElement('table');
+table.classList.add('table');
+
+const thead = document.createElement("thead");
+const tbody = document.createElement("tbody");
+
+const thead_tr = document.createElement("tr");
+thead.appendChild(thead_tr);
+
+tableHeads.forEach(tableHead => {
+  const th = document.createElement("th");
+  th.innerText = tableHead;
+
+  thead_tr.appendChild(th);
+})
+
+respostasRapidas.map(resposta => {
+  const tr = document.createElement("tr");
+  const td1 = document.createElement("td");
+  const td2 = document.createElement("td");
+  const td3 = document.createElement("td");
+
+  const button = document.createElement('button');
+  button.type = "button";
+  button.classList.add('btn', 'btn-primary', 'btn-sm');
+  button.innerText ='Inserir';
+
+  td3.appendChild(button);
+
+  button.addEventListener('click', () => {
+    textareaObservacao.value = resposta.texto;
+    dialog.close();
+  });
+
+  td1.innerText = resposta.sistema;
+  td2.innerText = resposta.texto;
+
+  tr.appendChild(td1);
+  tr.appendChild(td2);
+  tr.appendChild(td3);
+
+  tbody.appendChild(tr);
+})
+
+table.appendChild(thead);
+table.appendChild(tbody);
+
+dialog.insertAdjacentElement('afterbegin', table);
+
