@@ -1,0 +1,12 @@
+{
+  "name": "Help Desk Sugestions",
+  "description": "Exibe sugestões de respostas no Help Desk",
+  "version": "0.1.0",
+  "manifest_version": 3,
+  "content_scripts": [
+    {
+      "matches": ["https://helpdesk.defensoria.to.def.br/*"],
+      "js": ["content_script.js"]
+    }
+  ]
+}
