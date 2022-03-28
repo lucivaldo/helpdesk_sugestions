@@ -36,6 +36,12 @@ if (badges.length) {
       {
         sistema: 'Égide',
         texto: localStorage.getItem('@helpdesk.egide') || 'Solicitação atendida. Cadastro efetuado no sistema Égide. A senha é a mesma fornecida pelo setor de redes. Qualquer problema, à disposição.'
+      },
+      {
+        sistema: 'Égide',
+        texto: `Bom dia. Para servidores (não estagiários e não voluntários), o próprio servidor pode efetuar o seu cadastro. Para que isso seja possível é necessário apenas que o servidor já tenha usuário e senha cadastrados no setor de redes e esteja devidamente regularizado no sistema de RH (sistema Athenas).
+        É só acessar algum sistema pela primeira vez que será solicitado a matrícula e o CPF do novo servidor.
+        Qualquer problema, à disposição!`
       }
     ];
 
