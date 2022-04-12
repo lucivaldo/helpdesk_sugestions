@@ -1,6 +1,14 @@
 {
   respostasRapidasDialog.style = "max-width: 1000px";
 
+  const closeDialogBtn = document.createElement("button");
+  closeDialogBtn.type = "button";
+  closeDialogBtn.innerHTML = "Fechar";
+  closeDialogBtn.classList.add("btn", "btn-light", "btn-sm");
+  closeDialogBtn.addEventListener("click", () => {
+    respostasRapidasDialog.close();
+  });
+
   const table = document.createElement("table");
   table.classList.add("table");
 
@@ -72,7 +80,8 @@
   addTableHead();
   addTableBody();
 
-  respostasRapidasDialog.appendChild(table);
+  respostasRapidasDialog.insertAdjacentElement("beforeend", table)
+  respostasRapidasDialog.insertAdjacentElement("beforeend", closeDialogBtn);
 }
 
 document.body.insertAdjacentElement("afterbegin", respostasRapidasDialog);
