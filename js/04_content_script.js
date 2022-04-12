@@ -1,10 +1,12 @@
-const adicionarRespostaRapidaBtn = document.createElement("button");
-adicionarRespostaRapidaBtn.type = "button";
-adicionarRespostaRapidaBtn.classList.add("btn", "btn-light", "mt-2");
-adicionarRespostaRapidaBtn.innerHTML = "Inserir Resposta Rápida";
+if (textareaObservacao != null) {
+  const adicionarRespostaRapidaBtn = document.createElement("button");
+  adicionarRespostaRapidaBtn.type = "button";
+  adicionarRespostaRapidaBtn.classList.add("btn", "btn-light", "mt-2");
+  adicionarRespostaRapidaBtn.innerHTML = "Inserir Resposta Rápida";
 
-textareaObservacao.insertAdjacentElement("afterend", adicionarRespostaRapidaBtn);
+  textareaObservacao.insertAdjacentElement("afterend", adicionarRespostaRapidaBtn);
 
-adicionarRespostaRapidaBtn.addEventListener('click', () => {
-  respostasRapidasDialog.showModal();
-});
+  adicionarRespostaRapidaBtn.addEventListener('click', () => {
+    respostasRapidasDialog.showModal();
+  });
+}

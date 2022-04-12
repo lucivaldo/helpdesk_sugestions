@@ -1,4 +1,4 @@
-{
+if (respostasRapidasDialog != null) {
   respostasRapidasDialog.style = "max-width: 1000px";
 
   const closeDialogBtn = document.createElement("button");
@@ -41,15 +41,15 @@
       const tbody_tr = document.createElement("tr");
 
       const td_id = document.createElement("td");
-      const td_id_text  = document.createTextNode(respostaRapida["id"]);
+      const td_id_text = document.createTextNode(respostaRapida["id"]);
       td_id.appendChild(td_id_text);
 
       const td_sistema = document.createElement("td");
-      const td_sistema_text  = document.createTextNode(respostaRapida["sistema"]);
+      const td_sistema_text = document.createTextNode(respostaRapida["sistema"]);
       td_sistema.appendChild(td_sistema_text);
 
       const td_texto = document.createElement("td");
-      const td_texto_text  = document.createTextNode(respostaRapida["texto"]);
+      const td_texto_text = document.createTextNode(respostaRapida["texto"]);
       td_texto.appendChild(td_texto_text);
 
       const td_btn = document.createElement("td");
@@ -82,6 +82,6 @@
 
   respostasRapidasDialog.insertAdjacentElement("beforeend", table)
   respostasRapidasDialog.insertAdjacentElement("beforeend", closeDialogBtn);
-}
 
-document.body.insertAdjacentElement("afterbegin", respostasRapidasDialog);
+  document.body.insertAdjacentElement("afterbegin", respostasRapidasDialog);
+}
