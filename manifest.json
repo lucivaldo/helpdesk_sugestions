@@ -1,7 +1,7 @@
 {
   "name": "Help Desk Sugestions",
   "description": "Respostas rápidas do Help Desk",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "manifest_version": 3,
   "icons": {
     "48": "icon48.png"
@@ -14,7 +14,8 @@
         "js/01_setup_database.js",
         "js/02_global_elements.js",
         "js/03_respostas_rapidas_dialog.js",
-        "js/04_content_script.js"
+        "js/04_adicionar_resposta_dialog.js",
+        "js/05_content_script.js"
       ]
     }
   ]

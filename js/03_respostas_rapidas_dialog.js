@@ -1,4 +1,6 @@
-if (respostasRapidasDialog != null) {
+const respostasRapidasDialog = document.createElement("dialog");
+
+{
   respostasRapidasDialog.style = "max-width: 1000px";
 
   const closeDialogBtn = document.createElement("button");
@@ -83,5 +85,6 @@ if (respostasRapidasDialog != null) {
   respostasRapidasDialog.insertAdjacentElement("beforeend", table)
   respostasRapidasDialog.insertAdjacentElement("beforeend", closeDialogBtn);
 
-  document.body.insertAdjacentElement("afterbegin", respostasRapidasDialog);
 }
+
+document.body.insertAdjacentElement("afterbegin", respostasRapidasDialog);

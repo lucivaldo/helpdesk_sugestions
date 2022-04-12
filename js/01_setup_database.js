@@ -3,11 +3,15 @@ const DATABASE_VERSION = 1;
 
 const db = new Dexie(DATABASE_NAME);
 
-Dexie.delete(DATABASE_NAME);
-
 db.version(DATABASE_VERSION).stores({
   respostas_rapidas: '++id, sistema, texto'
 });
+
+db.on("populate", async () => {
+  await inserirRespostasIniciais();
+});
+
+db.open();
 
 async function inserirRespostasIniciais() {
   await db.respostas_rapidas.bulkAdd(
@@ -27,5 +31,3 @@ async function inserirRespostasIniciais() {
     ]
   );
 }
-
-inserirRespostasIniciais();
