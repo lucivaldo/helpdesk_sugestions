@@ -1,7 +1,7 @@
 {
   "name": "Help Desk Sugestions",
   "description": "Respostas rápidas do Help Desk",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "manifest_version": 3,
   "icons": {
     "48": "icon48.png"
@@ -9,7 +9,13 @@
   "content_scripts": [
     {
       "matches": ["https://helpdesk.defensoria.to.def.br/*"],
-      "js": ["content_script.js"]
+      "js": [
+        "lib/dexie.js",
+        "js/01_setup_database.js",
+        "js/02_global_elements.js",
+        "js/03_respostas_rapidas_dialog.js",
+        "js/04_content_script.js"
+      ]
     }
   ]
 }
