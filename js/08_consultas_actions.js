@@ -1,7 +1,7 @@
 const agendarChamadoLink = document.querySelector("a[title='Agendar chamado para data futura']");
 
 {
-  const container = agendarChamadoLink.closest(".row");
+  const container = agendarChamadoLink.closest(".row", "px-3");
 
   const row = document.createElement("div");
   row.classList.add("row");
@@ -31,5 +31,5 @@ const agendarChamadoLink = document.querySelector("a[title='Agendar chamado para
   col.appendChild(egideBtn);
 
   row.appendChild(col);
-  container.appendChild(row);
+  container.insertAdjacentElement("afterend", row);
 }
