@@ -15,7 +15,10 @@
         "js/02_global_elements.js",
         "js/03_respostas_rapidas_dialog.js",
         "js/04_adicionar_resposta_dialog.js",
-        "js/05_content_script.js"
+        "js/05_content_script.js",
+        "js/06_consultar_athenas_dialog.js",
+        "js/07_consultar_egide_dialog.js",
+        "js/08_consultas_actions.js"
       ]
     }
   ]
