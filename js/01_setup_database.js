@@ -22,11 +22,7 @@ async function inserirRespostasIniciais() {
       },
       {
         sistema: "Égide",
-        texto: `Bom dia. Para servidores (não estagiários e não voluntários), o próprio servidor pode efetuar o seu cadastro. Para que isso seja possível é necessário apenas que o servidor já tenha usuário e senha cadastrados no setor de redes e esteja devidamente regularizado no sistema de RH (sistema Athenas). É só acessar algum sistema pela primeira vez que será solicitado a matrícula e o CPF do novo servidor. Qualquer problema, à disposição!`
-      },
-      {
-        sistema: "Égide",
-        texto: `Boa tarde. A estagiária teve o perfil desabilitado porque a matrícula no setor de RH ficou inativa. O perfil será habilitado como "estagiária voluntária". Se este não for o caso, entrar em contato com o setor de RH para resolver eventuais pendências e o perfil retornar para "estagiária contratada".`
+        texto: `Em atendimento.`
       },
     ]
   );
