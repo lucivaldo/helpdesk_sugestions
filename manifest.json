@@ -1,8 +1,11 @@
 {
   "name": "Help Desk | Sugestões",
   "description": "Respostas rápidas para o Help Desk",
-  "version": "0.1.0",
+  "version": "0.1.10",
   "manifest_version": 3,
+  "icons": {
+    "48": "icon48.png"
+  },
   "content_scripts": [
     {
       "js": [
