@@ -2,7 +2,7 @@
   "name": "helpdesk-sugestions",
   "private": true,
   "scripts": {
-    "build": "zip -r helpdesk-sugestions.zip lib/ screenshots/ scripts/ icon_store.png icon48.png manifest.json",
+    "build": "zip -r helpdesk-sugestions.zip lib/ scripts/ icon_store.png icon48.png manifest.json",
     "clean": "rm helpdesk-sugestions.zip"
   }
 }
